@@ -25,4 +25,11 @@ public class UserController {
 	            ctx.json(user);
 	        }
 	    };
+	    
+	    public static Handler addUser = ctx -> {
+	        UserDao dao = UserDao.instance();
+	        User user=ctx.bodyAsClass(User.class);
+	        dao.addUser(user);
+	        ctx.json(user);
+	    };
 }

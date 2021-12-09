@@ -19,11 +19,10 @@ public static void main(String[] args) {
 	app.error(404, ctx->{ctx.html("Not Found Error");});
 	
 	
-	app.post("/users" , ctx ->{
-        User user = ctx.bodyAsClass(User.class);
-//        System.out.println(user);
-//        PrintWriter out=ctx.res.getWriter();
-//        out.print(user);
-      });
+	/*
+	 * app.post("/users" , ctx ->{ User user = ctx.bodyAsClass(User.class); });
+	 */
+	
+	app.post("/users", UserController.addUser);
 }
 }
